@@ -1,0 +1,81 @@
+:root {
+  --bg: #0b0e14;
+  --surface: #141a24;
+  --surface-alt: #1a2230;
+  --border: #262f3f;
+  --text: #f4f6f9;
+  --text-muted: #8993a4;
+  --accent-gold: #f0a828;
+  --accent-red: #ef4b4b;
+  --accent-green: #29a879;
+  --danger: #e5484d;
+  --danger-bg: rgba(229, 72, 77, 0.12);
+
+  --bank: #f0a828;
+  --paytm: #00b9f5;
+  --upi: #ff7a1a;
+  --paypal: #3391f0;
+  --usdt: #26a17b;
+
+  --radius-pill: 999px;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.page-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--text-muted);
+}
+
+/* focus visibility for keyboard users */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--paypal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
