@@ -1,8 +1,5 @@
 import { Landmark, Smartphone, QrCode, CircleDollarSign, Coins } from "lucide-react";
 
-// Single source of truth for the 5 mandatory payment types.
-// `fields` drives the add/edit form; `summary` drives the one-line
-// preview shown on each payment card.
 export const PAYMENT_TYPES = [
   {
     key: "Bank",
