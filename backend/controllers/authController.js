@@ -19,7 +19,6 @@ function publicUser(user) {
   };
 }
 
-// POST /api/auth/register
 async function register(req, res) {
   try {
     const { username, email, password } = req.body;
@@ -72,7 +71,6 @@ async function login(req, res) {
   }
 }
 
-// GET /api/auth/me
 async function me(req, res) {
   return res.json({ user: publicUser(req.user) });
 }

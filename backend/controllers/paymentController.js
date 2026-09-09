@@ -11,7 +11,6 @@ function pickTypeFields(body, paymentType) {
   return result;
 }
 
-// POST /api/payments
 async function addPayment(req, res) {
   try {
     const { paymentType } = req.body;
@@ -37,7 +36,6 @@ async function addPayment(req, res) {
   }
 }
 
-// GET /api/payments
 async function getMyPayments(req, res) {
   try {
     const payments = await PaymentMethod.find({ user: req.user._id }).sort({ createdAt: -1 });
@@ -47,7 +45,6 @@ async function getMyPayments(req, res) {
   }
 }
 
-// PUT /api/payments/:id
 async function updatePayment(req, res) {
   try {
     const existing = await PaymentMethod.findOne({ _id: req.params.id, user: req.user._id });
@@ -55,7 +52,6 @@ async function updatePayment(req, res) {
       return res.status(404).json({ message: "Payment method not found" });
     }
 
-    // paymentType itself is not editable - delete and re-add to change type
     const updates = pickTypeFields(req.body, existing.paymentType);
     Object.assign(existing, updates);
     await existing.save();
@@ -69,7 +65,6 @@ async function updatePayment(req, res) {
   }
 }
 
-// DELETE /api/payments/:id
 async function deletePayment(req, res) {
   try {
     const deleted = await PaymentMethod.findOneAndDelete({ _id: req.params.id, user: req.user._id });
