@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px;
   background: radial-gradient(circle at 20% 0%, #17202e 0%, var(--bg) 55%);
 }
 
@@ -12,8 +12,8 @@
   max-width: 380px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 32px 28px;
+  border-radius: 16px;
+  padding: 28px 20px;
 }
 
 .auth-brand {
@@ -68,9 +68,9 @@
   background: var(--surface-alt);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
+  min-height: 46px;
   padding: 11px 12px;
   color: var(--text);
-  font-size: 14px;
 }
 
 .field input:focus {
@@ -83,6 +83,7 @@
   color: #1a1200;
   border: none;
   border-radius: var(--radius-pill);
+  min-height: 46px;
   padding: 12px;
   font-size: 15px;
   font-weight: 600;

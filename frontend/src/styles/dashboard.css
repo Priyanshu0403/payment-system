@@ -1,14 +1,18 @@
 .dash-screen {
   min-height: 100vh;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
   background: var(--bg);
-  padding-bottom: 48px;
+  padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  border-inline: 1px solid var(--border);
 }
 
 .dash-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: 14px 16px;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -23,18 +27,18 @@
 }
 
 .dash-header-title h1 {
-  font-size: 19px;
+  font-size: 17px;
   margin: 0;
 }
 
 .dash-header-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
 }
 
 .dash-username {
-  font-size: 14px;
+  display: none;
   color: var(--text-muted);
 }
 
@@ -46,7 +50,8 @@
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: var(--radius-pill);
-  padding: 7px 14px;
+  min-height: 40px;
+  padding: 7px 12px;
   font-size: 13px;
   text-decoration: none;
 }
@@ -55,8 +60,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--surface-alt);
@@ -71,7 +76,7 @@
 .dash-main {
   max-width: 720px;
   margin: 0 auto;
-  padding: 28px 20px 0;
+  padding: 22px 16px 0;
 }
 
 .section-title {
@@ -82,29 +87,24 @@
 }
 
 .dash-main section {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .type-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-@media (max-width: 480px) {
-  .type-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .type-pill {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  padding: 12px 14px;
+  min-height: 52px;
+  padding: 10px 12px;
   color: var(--text);
   font-size: 14px;
   font-weight: 500;
@@ -157,11 +157,11 @@
 .payment-card {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 14px 16px;
+  padding: 12px;
 }
 
 .payment-card-icon {
@@ -195,7 +195,7 @@
 
 .payment-card-actions {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   flex-shrink: 0;
 }
 
@@ -203,7 +203,7 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 16px;
 }
 
 .disclaimer-title {
@@ -240,21 +240,21 @@
   inset: 0;
   background: rgba(4, 6, 10, 0.7);
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
-  padding: 20px;
+  padding: 0;
   z-index: 20;
 }
 
 .modal-card {
   width: 100%;
   max-width: 420px;
-  max-height: 90vh;
+  max-height: 92dvh;
   overflow-y: auto;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 22px;
+  border-radius: 20px 20px 0 0;
+  padding: 20px 16px calc(20px + env(safe-area-inset-bottom));
 }
 
 .modal-header {
@@ -293,6 +293,7 @@
   border: 1px solid var(--border);
   color: var(--text);
   border-radius: var(--radius-pill);
+  min-height: 46px;
   padding: 12px;
   font-size: 14px;
 }

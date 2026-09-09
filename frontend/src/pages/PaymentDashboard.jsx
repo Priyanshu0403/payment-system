@@ -13,7 +13,7 @@ export default function PaymentDashboard() {
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [modal, setModal] = useState(null); // { typeConfig, payment | null }
+  const [modal, setModal] = useState(null); 
 
   useEffect(() => {
     loadPayments();

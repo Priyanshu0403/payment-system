@@ -40,6 +40,7 @@ body {
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 button {
@@ -50,6 +51,7 @@ button {
 input,
 select {
   font-family: inherit;
+  font-size: 16px;
 }
 
 a {
